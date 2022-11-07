@@ -7,6 +7,6 @@
 
 ## Step 3. Convolutional Neural Network with MNIST dataset   
 
-## Step 4. A methods to avoid Over-Fitting Problem  
+## Step 4. Methods to avoid Over-Fitting Problem  
 
 ## Step 5. Implement VGG16 model for classification  
