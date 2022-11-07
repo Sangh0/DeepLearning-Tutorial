@@ -1,5 +1,5 @@
 # Introduce Deep Learning Basic with Keras   
-- step 1. Linear Regression and Classification  
+- step 1. Linear Regression and Classification with Scikit-Learn  
   - [Gradient Descent](https://github.com/Sangh0/DLstudy/blob/main/1.%20Linear%20Regression%20and%20Classification/GradientDescentAlgorithm.ipynb) using only numpy package    
   
 - Step 2. Multi Layer Perceptron with MNIST dataset   
