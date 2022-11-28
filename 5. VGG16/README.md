@@ -1,1 +1,3 @@
-# VGG16 직접 구축 및 사전 훈련 모델 학습하기
+### Implement VGG16 network   
+- training pretrained model in keras  
+- fine-tuning
