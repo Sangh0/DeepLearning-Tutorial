@@ -23,7 +23,7 @@ cd DeepLearning-Tutorial/current_materials
 - Or run in Colab
 
 ### Prerequisites
-- 
+- To make the most of these tutorials, a basic understanding of Python programming is necessary. If you are new to Python, refer to the [`current_materials`](./current_materials/). The deep learning section requires a basic understanding of Python.
 
 ### How to Use
 - 1. **Choose Your Version**: Decide whether you want to start with the Legacy materials or the Current tutorials based on your skill level and learning goals. If you don't know Python, go to Current tutorials.
