@@ -11,7 +11,7 @@
 - To get started with these tutorials, clone this repository to your local machine or download the files directly.
 
 ```
-https://github.com/Sangh0/DeepLearning-Tutorial.git
+git clone https://github.com/Sangh0/DeepLearning-Tutorial.git
 ```
 
 - Navigate into the folder you want to explore and open the Colab files to start learning:
