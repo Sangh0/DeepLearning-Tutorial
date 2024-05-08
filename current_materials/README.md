@@ -1,11 +1,32 @@
-# Introduce Deep Learning Basic with Keras and PyTorch
-- step 1. Linear Regression and Classification with Scikit-Learn  
-  - [Gradient Descent](https://github.com/Sangh0/DLstudy/blob/main/1.%20Linear%20Regression%20and%20Classification/GradientDescentAlgorithm.ipynb) using only numpy package    
-  
-- Step 2. Multi Layer Perceptron with MNIST dataset   
+## Introduce Machine Learning and Deep Learning for begineers
 
-- Step 3. Convolutional Neural Network with MNIST dataset   
+- The materials contained here were created in 2024 (updated version)
+- legacy version -> [`click`](https://github.com/Sangh0/DeepLearning-Tutorial/tree/main/legacy_materials)
+- Author: Sangho Kim
 
-- Step 4. Methods to avoid Over-Fitting Problem  
+**Contents**
+- The materials are composed of colab files
+- Chapter 1. Python Introduction
+    - From string and number variable assignments to class of Python
+    - [`material`](https://github.com/Sangh0/DeepLearning-Tutorial/blob/main/current_materials/1_python_for_beginners.ipynb)
 
-- Step 5. Implement VGG16 model for classification  
+- Chapter 2. Python with Baekjoon practices
+    - Baekjoon practice
+    - [`material`](https://github.com/Sangh0/DeepLearning-Tutorial/blob/main/current_materials/2_python_review_with_baekjoon.ipynb)
+
+- Chatper 3. Linear regression and classification
+    - [`material`](./3_linear_regression_and_classification.ipynb)
+
+- Chapter 4. Gradient Descent
+    - [`material`](./4_gradient_descent.ipynb)
+
+- Chapter 5. Building and Training Multi Layer Perceptron
+    - [`material`](./5_dnn_with_mnist.ipynb)
+
+- Chapter 6. Building and Training Convolutional Neural Network
+    - [`material`](./6_cnn_with_mnist.ipynb)
+
+
+### Contact
+- Sangho Kim
+- hop7311@gmail.com
