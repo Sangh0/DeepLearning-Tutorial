@@ -6,33 +6,65 @@ from torchvision.models import vgg16_bn, VGG16_BN_Weights
 # Direct Implementation
 class VGG16(nn.Module):
 
-    def __init__(self, in_dim=3, hidden_dim=64, out_dim=1000):
+    def __init__(self):
         super(VGG16, self).__init__()
         self.features = nn.Sequential(
-            nn.Conv2d(in_dim, hidden_dim, kernel_size=3, stride=1, padding=1),
+            # first conv block --------------------------------------------------------
+            nn.Conv2d(3, 64, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
-            nn.BatchNorm2d(),
-            nn.Conv2d(hidden_dim, hidden_dim*2, kernel_size=3, stride=1, padding=1),
+            nn.Conv2d(64, 64, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
-            nn.BatchNorm2d(),
-            nn.Conv2d(hidden_dim*2, hidden_dim*4, kernel_size=3, stride=1, padding=1),
+            nn.MaxPool2d(kernel_size=2, stride=2),
+            # -------------------------------------------------------------------------
+            
+            # second conv block -------------------------------------------------------
+            nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
-            nn.BatchNorm2d(),
-            nn.Conv2d(hidden_dim*4, hidden_dim*8, kernel_size=3, stride=1, padding=1),
+            nn.Conv2d(128, 128, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
-            nn.BatchNorm2d(),
-            nn.Conv2d(hidden_dim*8, hidden_dim*8, kernel_size=3, stride=1, padding=1),
+            nn.MaxPool2d(kernel_size=2, stride=2),
+            # -------------------------------------------------------------------------
+        
+            # third conv block --------------------------------------------------------
+            nn.Conv2d(128, 256, kernel_size=3, stride=1, padding=1),
             nn.ReLU(),
-            nn.BatchNorm2d(),
+            nn.Conv2d(256, 256, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+            nn.Conv2d(256, 256, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=2),
+            # --------------------------------------------------------------------------
+
+            # fourth conv block --------------------------------------------------------
+            nn.Conv2d(256, 512, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+            nn.Conv2d(512, 512, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+            nn.Conv2d(512, 512, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=2),
+            # --------------------------------------------------------------------------
+
+            # fifth conv block ---------------------------------------------------------
+            nn.Conv2d(512, 512, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+            nn.Conv2d(512, 512, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+            nn.Conv2d(512, 512, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(),
+            nn.MaxPool2d(kernel_size=2, stride=2),
+            # --------------------------------------------------------------------------            
         )
 
+        # fully connected layers -------------------------------------------------------
         self.classifier = nn.Sequential(
             nn.Linear(7*7*512, 4096),
             nn.ReLU(),
             nn.Linear(4096, 4096),
             nn.ReLU(),
-            nn.Linear(4096, out_dim),
+            nn.Linear(4096, 1000),
         )
+        # ------------------------------------------------------------------------------
 
     def forward(self, x):
         batch_size = x.size(0)
